@@ -18,6 +18,7 @@ public class TransmissionTest
      */
     public static void main(String[] args)
     {
+        SendingInfo si = null;
         BufferedReader BR = null;
         InputStreamReader ISR = null;
         int port = 8080;
@@ -25,6 +26,8 @@ public class TransmissionTest
         Socket s = null;
         String inputLine = "";
         short counter = 0;
+        si = new SendingInfo(port);
+        String outboundMsg = "Hello There!";
         
         try
         {
@@ -37,6 +40,9 @@ public class TransmissionTest
         {
             System.out.println("IOEXCEPTION 1");
         }
+        
+        si.SendData(outboundMsg); // connectionexception: no service listening
+        // probably because it only starts listening a few lines below this...
         
         try
         {
