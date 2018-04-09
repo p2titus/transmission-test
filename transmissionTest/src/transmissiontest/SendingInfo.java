@@ -11,11 +11,12 @@ package transmissiontest;
  */
 import java.io.*;
 import java.net.*;
-public class SendingInfo
+public class SendingInfo extends Thread
 {
     private String serverAd = "127.0.0.1";
     private int port = 0;
     private Socket s = null;
+    //private String msg = null;
     
     public SendingInfo(int port)
     {
@@ -24,8 +25,16 @@ public class SendingInfo
         //sendData("Hello there!");
     }
     
+    /*@Override
+    public void run()
+    {
+        sendData(msg);
+    }//*/
+    
     public void SendData(String msg)
     {
+        //this.msg = msg; // cheeky little workaround
+        //run();
         sendData(msg);
     }
     

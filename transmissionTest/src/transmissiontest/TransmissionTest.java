@@ -41,7 +41,7 @@ public class TransmissionTest
             System.out.println("IOEXCEPTION 1");
         }
         
-        si.SendData(outboundMsg); // connectionexception: no service listening
+        //si.SendData(outboundMsg); // connectionexception: no service listening
         // probably because it only starts listening a few lines below this...
         
         try
@@ -51,6 +51,7 @@ public class TransmissionTest
             {
                 System.out.println("FLAG 4");
                 s = listener.accept(); // halting on this line, probably because nothing is sending data...
+                //si.SendData(outboundMsg); // as it halts on the line above, it is unable to reach this line to send the data
                 System.out.println("FLAG 5");
                 ISR = new InputStreamReader(s.getInputStream());
                 BR = new BufferedReader(ISR);
