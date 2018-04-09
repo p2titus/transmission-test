@@ -9,13 +9,12 @@ package transmissiontest;
  *
  * @author p2titus
  */
-import java.io.*;
-import java.net.*;
-public class TransmissionTest
-{
+public class TransmissionTest {
+
     /**
      * @param args the command line arguments
      */
+<<<<<<< HEAD
     public static void main(String[] args)
     {
         SendingInfo si = null;
@@ -95,6 +94,10 @@ public class TransmissionTest
                 System.out.println("IOEXCEPTION 1");
             }
         }
+=======
+    public static void main(String[] args) {
+        // TODO code application logic here
+>>>>>>> parent of b557ce7... Listen code
     }
     
 }
