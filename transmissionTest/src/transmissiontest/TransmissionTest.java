@@ -25,10 +25,43 @@ public class TransmissionTest
         final receivingData rd;
         
         final int port = 8080;
+        final String ipToCon = "127.0.0.1";
+        
         rd = new receivingData(port); // rd = receivingData
         
-        rd.run();
+        //rd.run();
         
     }
     
+    private void sendMsg(String msg, String ip, int port)
+    {
+        try
+        {
+            //Socket s = new Socket(ip, port);
+            sendData(msg, new Socket(ip, port));
+        }
+        
+        catch(final IOException ex)
+        {
+            System.out.println("IOEXCEPTION 1");
+        }
+        
+    }
+    
+    private void sendData(String msg, Socket sendData)
+    {
+        PrintWriter PW = null;
+        
+        try
+        {
+            PW = new PrintWriter(sendData.getOutputStream());
+            PW.println(msg);
+            PW.close();
+        }
+        
+        catch(final IOException ex)
+        {
+            System.out.println("IOEXCEPTION 2");
+        }
+    }
 }
