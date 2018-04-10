@@ -35,7 +35,7 @@ public class TransmissionTest
         gm.sendMsg("Hello There!", ipToCon, port);
         msg = rd.msg();
         System.out.println("FLAG 3");
-        System.out.println(msg); // outputting null
+        System.out.println(msg); // outputting correct response, but only some of the time?
     }
     
     private void sendMsg(String msg, String ip, int port)
