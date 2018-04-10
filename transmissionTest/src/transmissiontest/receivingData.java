@@ -55,7 +55,7 @@ public class receivingData extends Thread
         {
             while(true)
             {
-                s = listener.accept();
+                s = listener.accept(); // accepting incoming connections
                 break;
             }
         }

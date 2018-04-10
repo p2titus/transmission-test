@@ -26,11 +26,16 @@ public class TransmissionTest
         
         final int port = 8080;
         final String ipToCon = "127.0.0.1";
+        String msg = "Failure";
         
         rd = new receivingData(port); // rd = receivingData
-        
-        //rd.run();
-        
+        System.out.println("FLAG 1");
+        rd.start(); // program hangs here
+        System.out.println("FLAG 2");
+        gm.sendMsg("Hello There!", ipToCon, port);
+        msg = rd.msg();
+        System.out.println("FLAG 3");
+        System.out.println(msg); // outputting null
     }
     
     private void sendMsg(String msg, String ip, int port)
